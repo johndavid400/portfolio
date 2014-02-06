@@ -19,12 +19,12 @@
 
   <div class='field'>
     <%= f.label :category_id -%>
-    <%= f.select :category_id, options_from_collection_for_select(Refinery::Categories::Category.all, :id, :title), :include_blank => true -%>
+    <%= f.select :category_id, options_from_collection_for_select(Refinery::Categories::Category.all, :id, :title, @portfolio_image.category_id), :include_blank => true -%>
   </div>
 
   <div class='field'>
     <%= f.label :client_id -%>
-    <%= f.select :client_id, options_from_collection_for_select(Refinery::Clients::Client.all, :id, :title), :include_blank => true -%>
+    <%= f.select :client_id, options_from_collection_for_select(Refinery::Clients::Client.all, :id, :title, @portfolio_image.client_id), :include_blank => true -%>
   </div>
 
   <%= render '/refinery/admin/form_actions', :f => f,
