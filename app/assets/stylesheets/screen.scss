@@ -1,11 +1,13 @@
+$dark_gray: lightgray;
+
 body {
+  background-image: url('pink.jpg');
+  background-size: cover;
 }
 
 h1, h2, h3{
   font-family: 'Loved by the King', cursive;
 }
-
-$dark_gray: lightgray;
 
 .imgshadow{
   background: #FFFFFF;
@@ -15,3 +17,11 @@ $dark_gray: lightgray;
   -webkit-box-shadow: 0px 0px 5px $dark_gray;
   box-shadow: 0px 0px 5px $dark_gray;
 }
+
+.container {
+  background: rgba(255,255,255,0.7);
+  .inner{
+    padding: 0px 30px;
+  }
+}
+

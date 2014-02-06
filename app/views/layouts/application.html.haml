@@ -25,10 +25,12 @@
 %body
 
   .row
-    .large-12.columns
-      = render 'layouts/nav'
-  .row
-    .large-12.columns
-      = yield
+    .large-12.container
+      .row
+        .large-12.columns
+          = render 'layouts/nav'
+      .row
+        .large-12.columns.inner
+          = yield
 
   = javascript_include_tag "application"
