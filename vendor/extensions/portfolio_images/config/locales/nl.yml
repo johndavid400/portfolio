@@ -1,0 +1,30 @@
+nl:
+  refinery:
+    plugins:
+      portfolio_images:
+        title: Portfolio Images
+    portfolio_images:
+      admin:
+        portfolio_images:
+          actions:
+            create_new: Nieuwe Portfolio Image toevoegen
+            reorder: De volgorde van de Portfolio Images wijzigen
+            reorder_done: Klaar met het wijzingen van de van de Portfolio Image-volgorde
+          records:
+            title: Portfolio Images
+            sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+            no_items_yet: Er zijn nog geen Portfolio Images. Druk op 'Nieuwe Portfolio Image toevoegen' om de eerste toe te voegen.
+          portfolio_image:
+            view_live_html: Deze portfolio image op de website bekijken <br/><em>(opent in een nieuw venster)</em>
+            edit: Bewerk deze portfolio image
+            delete: Deze portfolio image definitief verwijderen
+      portfolio_images:
+        show:
+          other: Andere Portfolio Images
+  activerecord:
+    attributes:
+      'refinery/portfolio_images/portfolio_image':
+        title: Title
+        image: Image
+        category_id: Category
+        client_id: Client

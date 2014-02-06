@@ -1,0 +1,45 @@
+<% content_for :body_content_title do %>
+  <%= @portfolio_image.title %>
+<% end %>
+
+<% content_for :body do %>
+  <section>
+    <h1>Title</h1>
+    <p>
+      <%=raw @portfolio_image.title %>
+    </p>
+  </section>
+  <section>
+    <h1>Image</h1>
+    <p>
+      <%= image_fu @portfolio_image.image, nil %>
+    </p>
+  </section>
+  <section>
+    <h1>Category</h1>
+    <p>
+      <%=raw @portfolio_image.category_id %>
+    </p>
+  </section>
+  <section>
+    <h1>Client</h1>
+    <p>
+      <%=raw @portfolio_image.client_id %>
+    </p>
+  </section>
+<% end %>
+
+<% content_for :side_body do %>
+  <aside>
+    <h2><%= t('.other') %></h2>
+    <ul id="portfolio_images">
+      <% @portfolio_images.each do |portfolio_image| %>
+        <li>
+          <%= link_to portfolio_image.title, refinery.portfolio_images_portfolio_image_path(portfolio_image) %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>
+
+<%= render '/refinery/content_page' %>

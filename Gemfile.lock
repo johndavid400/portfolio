@@ -5,6 +5,8 @@ PATH
       refinerycms-core (~> 2.1.1)
     refinerycms-clients (1.0)
       refinerycms-core (~> 2.1.1)
+    refinerycms-portfolio_images (1.0)
+      refinerycms-core (~> 2.1.1)
 
 GEM
   remote: https://rubygems.org/
@@ -239,6 +241,7 @@ DEPENDENCIES
   refinerycms-categories!
   refinerycms-clients!
   refinerycms-page-images (~> 2.1.0)
+  refinerycms-portfolio_images!
   sass-rails (~> 3.2.3)
   uglifier (>= 1.0.3)
   zurb-foundation (= 4.1.1)

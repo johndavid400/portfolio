@@ -1,0 +1,30 @@
+it:
+  refinery:
+    plugins:
+      portfolio_images:
+        title: Portfolio Images
+    portfolio_images:
+      admin:
+        portfolio_images:
+          actions:
+            create_new: Aggiungi Nuovo Portfolio Image
+            reorder: Riordina Portfolio Images
+            reorder_done: Termina il Riordino di Portfolio Images
+          records:
+            title: Portfolio Images
+            sorry_no_results: "Spiacenti! Nessun risultato trovato"
+            no_items_yet: Non ci sono ancora Portfolio Images. Clicca "Aggiungi Nuovo Portfolio Image" per aggiungere il tuo primo portfolio image.
+          portfolio_image:
+            view_live_html: Guarda live questo portfolio image <br/><em>(apre una nuova finestra)</em>
+            edit: Modifica questo portfolio image
+            delete: Rimuovi per sempre questo portfolio image
+      portfolio_images:
+        show:
+          other: Altri Portfolio Images
+  activerecord:
+    attributes:
+      'refinery/portfolio_images/portfolio_image':
+        title: Title
+        image: Image
+        category_id: Category
+        client_id: Client

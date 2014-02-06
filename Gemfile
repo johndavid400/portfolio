@@ -32,3 +32,5 @@ gem 'refinerycms-page-images', '~> 2.1.0'
 
 gem 'refinerycms-categories', :path => 'vendor/extensions'
 gem 'refinerycms-clients', :path => 'vendor/extensions'
+
+gem 'refinerycms-portfolio_images', :path => 'vendor/extensions'

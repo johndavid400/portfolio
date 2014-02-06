@@ -1,0 +1,30 @@
+tr:
+  refinery:
+    plugins:
+      portfolio_images:
+        title: Portfolio Images
+    portfolio_images:
+      admin:
+        portfolio_images:
+          actions:
+            create_new: Yeni Ekle Portfolio Image
+            reorder: Tekrar sirala Portfolio Images
+            reorder_done: Tekrar siralama tamamlandiPortfolio Images
+          records:
+            title: Portfolio Images
+            sorry_no_results: Uzgunum! Herhangi bir sonuc bulunamadi.
+            no_items_yet: Herhangi bir Portfolio Images yok henuz.  Tikla "Yeni Ekle Portfolio Image" eklemek senin ilk portfolio image.
+          portfolio_image:
+            view_live_html: Bunu canlu portfolio image goruntule <br/><em>(yeni bir pencerede acar)</em>
+            edit: Bunu Duzenle portfolio image
+            delete: Bunu Sil portfolio image sonsuza dek
+      portfolio_images:
+        show:
+          other: Diger Portfolio Images
+  activerecord:
+    attributes:
+      'refinery/portfolio_images/portfolio_image':
+        title: Title
+        image: Image
+        category_id: Category
+        client_id: Client

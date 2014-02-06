@@ -5,7 +5,7 @@ module Refinery
 
       attr_accessible :title, :description, :position
 
-      has_many :portfolio_images, :class_name => "::Refinery::PortfolioImages::PortfolioImage"
+      has_many :images, :class_name => "::Refinery::PortfolioImages::PortfolioImage"
 
       validates :title, :presence => true, :uniqueness => true
     end
