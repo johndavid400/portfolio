@@ -10,9 +10,12 @@
     %hr
     %aside
       .row
-        .large-4.columns
+        .large-12.columns
           %h2= t('.other')
-          - @categories.each do |category|
-            = link_to category.title, refinery.categories_category_path(category), :class => "button small secondary"
+          %ul
+            - @categories.each do |category|
+              %li.inline.link
+                = link_to category.title, refinery.categories_category_path(category)
+                = "|" unless category == @categories.last
 
 = render '/refinery/content_page'

@@ -10,9 +10,12 @@
     %hr
     %aside
       .row
-        .large-4.columns
+        .large-12.columns
           %h2= t('.other')
-          - @clients.each do |client|
-            = link_to client.title, refinery.clients_client_path(client), :class => "button small secondary"
+          %ul
+            - @clients.each do |client|
+              %li.inline.link
+                = link_to client.title, refinery.clients_client_path(client)
+                = "|" unless client == @clients.last
 
 = render '/refinery/content_page'
