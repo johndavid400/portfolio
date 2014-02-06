@@ -1,31 +1,9 @@
 %h1 Melissa Warren
 .row
   .large-12.columns
-    %h3 Books
-    %ul.large-block-grid-4
-      %li= image_tag("BookCover_AIGF.png", :class => "imgshadow")
-      %li= image_tag("BookCover_MSHMV_working.png", :class => "imgshadow")
-      %li= image_tag("BookCover_GF.png", :class => "imgshadow")
-      %li= image_tag("BookCover_TYF.png", :class => "imgshadow")
+    - Refinery::Categories::Category.all.each do |category|
+      %h3= category.title
+      %ul.large-block-grid-5
+        - category.images.each do |image|
+          %li= image_tag(image.thumb, :class => "imgshadow")
 
-.row
-  .large-12.columns
-    %h3 ClipArt
-    %ul.large-block-grid-5
-      %li= image_tag("cherries.png", :class => "imgshadow")
-      %li= image_tag("cherries2.png", :class => "imgshadow")
-      %li= image_tag("chicks.png", :class => "imgshadow")
-      %li= image_tag("basket2.png", :class => "imgshadow")
-      %li= image_tag("1.png", :class => "imgshadow")
-    %ul.large-block-grid-5
-      %li= image_tag("oranges.png", :class => "imgshadow")
-      %li= image_tag("face.png", :class => "imgshadow")
-      %li= image_tag("grass.png", :class => "imgshadow")
-      %li= image_tag("owl.png", :class => "imgshadow")
-      %li= image_tag("sheep.png", :class => "imgshadow")
-    %ul.large-block-grid-5
-      %li= image_tag("purse.png", :class => "imgshadow")
-      %li= image_tag("sheep1.png", :class => "imgshadow")
-      %li= image_tag("sheep2.png", :class => "imgshadow")
-      %li= image_tag("sheep3.png", :class => "imgshadow")
-      %li= image_tag("spoon.png", :class => "imgshadow")

@@ -10,6 +10,11 @@ module Refinery
       belongs_to :client, :class_name => '::Refinery::Clients::Client'
       belongs_to :category, :class_name => '::Refinery::Categories::Category'
       belongs_to :image, :class_name => '::Refinery::Image'
+
+      def thumb
+        image.image.thumb("300x230#").url
+      end
+
     end
   end
 end
