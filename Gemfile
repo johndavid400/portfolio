@@ -7,6 +7,7 @@ gem 'haml'
 gem 'pry'
 gem 'fog'
 gem 'rails_12factor', group: :production
+gem 'font-awesome-sass'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
