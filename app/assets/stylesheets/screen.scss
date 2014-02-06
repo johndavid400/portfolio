@@ -1,0 +1,17 @@
+body {
+}
+
+$dark_gray: lightgray;
+
+img {
+  height: 150px;
+}
+
+.imgshadow{
+  background: #FFFFFF;
+  border: 1px solid $dark_gray;
+  margin-top: 5px;
+  -moz-box-shadow: 0px 0px 5px $dark_gray;
+  -webkit-box-shadow: 0px 0px 5px $dark_gray;
+  box-shadow: 0px 0px 5px $dark_gray;
+}
