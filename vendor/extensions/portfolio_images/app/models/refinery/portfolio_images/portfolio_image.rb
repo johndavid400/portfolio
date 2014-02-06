@@ -15,6 +15,14 @@ module Refinery
         image.image.thumb("300x230#").url
       end
 
+      def medium
+        image.image.thumb("640x480").url
+      end
+
+      def large
+        image.image.thumb("1024x768").url
+      end
+
     end
   end
 end

@@ -1,10 +1,12 @@
 source 'https://rubygems.org'
+ruby '2.0.0'
 
 gem 'rails', '3.2.16'
 gem 'pg'
 gem 'haml'
 gem 'pry'
 gem 'fog'
+gem 'rails_12factor', group: :production
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
