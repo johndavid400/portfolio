@@ -1,9 +1,3 @@
-%h1 Melissa Warren - Designer
-.row
-  .large-12.columns
-    - Refinery::Categories::Category.all.each do |category|
-      %h3= category.title
-      %ul.large-block-grid-5
-        - category.images.each do |image|
-          %li= link_to image_tag(image.thumb, :class => "imgshadow"), image.medium, :title => image.title, :rel => "lightbox[#{category.title}]"
-
+.large-12.columns
+  %h1 Melissa Warren - Designer
+  = render '/refinery/content_page'

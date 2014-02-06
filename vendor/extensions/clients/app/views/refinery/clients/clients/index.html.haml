@@ -1,9 +1,10 @@
 - content_for :body do
   .row
     - @clients.each do |client|
-      %h3= link_to client.title, refinery.clients_client_path(client)
-      %ul.large-block-grid-5
-        - client.images.each do |image|
-          %li= link_to image_tag(image.thumb, :class => "imgshadow"), image.medium, :title => image.title, :rel => "lightbox[#{client.title}]"
+      - if client.images.present?
+        %h3= link_to client.title, refinery.clients_client_path(client)
+        %ul.large-block-grid-5
+          - client.images.each do |image|
+            %li= link_to image_tag(image.thumb, :class => "imgshadow"), image.medium, :title => image.title, :rel => "lightbox[#{client.title}]"
 
 = render '/refinery/content_page'
