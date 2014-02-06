@@ -2,25 +2,34 @@
   <ul class="title-area">
     <!-- Title Area -->
     <li class="name">
-      <h1><a href="#">Melissa Warren </a></h1>
+    <h1><%= link_to "Melissa Warren", "/" %></h1>
     </li>
     <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
     <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
   </ul>
 
   <section class="top-bar-section">
-    <!-- Left Nav Section -->
     <ul class="right">
+      <%- Refinery::Page.all.each do |page| %>
+        <%- if page.in_menu? %>
+          <li><%= link_to page.title, refinery.page_path(page) %></li>
+          <li class="divider"></li>
+        <% end %>
+      <% end %>
       <li class="divider"></li>
-      <li class="active"><a href="#">About Me</a></li>
+      <li class="has-dropdown"><%= link_to "Clients", refinery.clients_clients_path %>
+        <ul class="dropdown">
+          <%- Refinery::Clients::Client.all.each do |client| %>
+            <li><%= link_to client.title, refinery.clients_client_path(client) %></li>
+            <li class="divider"></li>
+          <% end %>
+        </ul>
+      </li>
       <li class="divider"></li>
-      <li><a href="#">Clients</a></li>
-      <li class="divider"></li>
-
-      <li class="has-dropdown"><a href="#">Graphics</a>
+      <li class="has-dropdown"><%= link_to "Categories", refinery.categories_categories_path %>
         <ul class="dropdown">
           <%- Refinery::Categories::Category.all.each do |category| %>
-            <li><a href="#"><%= category.title %></a></li>
+            <li><%= link_to category.title, refinery.categories_category_path(category) %></li>
             <li class="divider"></li>
           <% end %>
         </ul>

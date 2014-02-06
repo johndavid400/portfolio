@@ -1,0 +1,18 @@
+- content_for :body_content_title do
+  = @client.title
+  %ul.large-block-grid-5
+    - @client.images.each do |image|
+      %li= link_to image_tag(image.thumb, :class => "imgshadow"), image.medium, :title => image.title, :rel => "lightbox[#{@client.title}]"
+
+
+- content_for :side_body do
+  .row
+    %hr
+    %aside
+      .row
+        .large-4.columns
+          %h2= t('.other')
+          - @clients.each do |client|
+            = link_to client.title, refinery.clients_client_path(client), :class => "button small secondary"
+
+= render '/refinery/content_page'
