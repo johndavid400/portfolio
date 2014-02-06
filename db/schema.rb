@@ -11,7 +11,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140206031343) do
+ActiveRecord::Schema.define(:version => 20140206045003) do
+
+  create_table "refinery_categories", :force => true do |t|
+    t.string   "title"
+    t.integer  "position"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "refinery_clients", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.integer  "position"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
   create_table "refinery_image_page_translations", :force => true do |t|
     t.integer  "refinery_image_page_id"
