@@ -26,6 +26,9 @@
 
   .row
     .large-12.columns
+      = render 'layouts/nav'
+  .row
+    .large-12.columns
       = yield
 
   = javascript_include_tag "application"
