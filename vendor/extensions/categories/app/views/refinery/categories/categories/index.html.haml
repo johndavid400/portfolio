@@ -2,6 +2,7 @@
   .row
     - @categories.each do |category|
       - if category.images.present?
+        %hr
         %h3= link_to category.title, refinery.categories_category_path(category)
         %ul.large-block-grid-5
           - category.images.each do |image|

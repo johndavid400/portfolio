@@ -2,6 +2,7 @@
   .row
     - @clients.each do |client|
       - if client.images.present?
+        %hr
         %h3= link_to client.title, refinery.clients_client_path(client)
         %ul.large-block-grid-5
           - client.images.each do |image|
