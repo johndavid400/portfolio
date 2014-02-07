@@ -10,7 +10,11 @@
 
   <section class="top-bar-section">
     <ul class="right">
-      <%- Refinery::Page.all.each do |page| %>
+      <%- if current_refinery_user %>
+        <li><%= link_to "Admin", refinery.admin_dashboard_path %></li>
+        <li class="divider"></li>
+      <% end %>
+      <%- Refinery::Page.all.sort{|x,y| x.lft <=> y.lft }.each do |page| %>
         <%- if page.in_menu? %>
           <li><%= link_to page.title, refinery.page_path(page) %></li>
           <li class="divider"></li>
