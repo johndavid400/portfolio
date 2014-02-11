@@ -12,7 +12,12 @@ module Refinery
       belongs_to :image, :class_name => '::Refinery::Image'
 
       def thumb
-        image.image.thumb("300x230#").url
+        # image.image.thumb("300x230#").url
+        File.open(File.join(Rails.root, "public", "assets", "thumbs", image.image.name))
+        ["thumbs", image.image.name].join("/")
+      rescue
+        image.image.thumb("300x230#").to_file(Rails.root.join("public", "assets", "thumbs", image.image.name))
+        ["thumbs", image.image.name].join("/")
       end
 
       def medium
