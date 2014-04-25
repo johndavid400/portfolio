@@ -5,6 +5,7 @@
 
 %ul.small-block-grid-4
   - @projects.each do |project|
-    %li.project
-      = link_to image_tag(project.attachment.url(:thumb)), project.attachment.url(:large), title: "<a href='#{project.attachment.url}'>view full size image</a>", :rel => "lightbox[project]"
+    - if project.attachment?
+      %li.project
+        = link_to image_tag(project.attachment.url(:thumb)), project.attachment.url(:large), title: "<a href='#{project.attachment.url}'>view full size image</a>", :rel => "lightbox[project]"
 

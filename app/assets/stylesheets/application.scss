@@ -10,15 +10,14 @@
  *
  *= require_self
  *= require foundation_and_overrides
-
  *= require_tree .
  */
 
 @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
-
 *{font-family: Montserrat}
 
-.project {
+li.project {
   border: 1px solid gray;
-  background: blue; 
+  text-align: center;
+  height: 150px !important;
 }
