@@ -1,14 +1,13 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
+  before_filter :authorize, only: [:new, :edit, :create, :update, :destroy]
 
   # GET /projects
   # GET /projects.json
   def index
-    @projects = Project.all
+    @projects = Project.order(:created_at)
   end
 
-  # GET /projects/1
-  # GET /projects/1.json
   def show
   end
 
@@ -28,7 +27,7 @@ class ProjectsController < ApplicationController
 
     respond_to do |format|
       if @project.save
-        format.html { redirect_to @project, notice: 'Project was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Project was successfully created.' }
         format.json { render action: 'show', status: :created, location: @project }
       else
         format.html { render action: 'new' }
@@ -56,7 +55,7 @@ class ProjectsController < ApplicationController
   def destroy
     @project.destroy
     respond_to do |format|
-      format.html { redirect_to projects_url }
+      format.html { redirect_to projects_url, notice: "Deleted the resource"}
       format.json { head :no_content }
     end
   end
@@ -72,4 +71,11 @@ class ProjectsController < ApplicationController
       #params[:project]
       params.require(:project).permit(:name, :attachment)
     end
+
+    def authorize
+      unless current_user
+        redirect_to root_path
+      end
+    end
+
 end
