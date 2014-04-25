@@ -16,8 +16,11 @@
 @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
 *{font-family: Montserrat}
 
-li.project {
-  border: 1px solid gray;
+.project {
+  border: 1px solid lightgray;
+  height: 133px !important;
   text-align: center;
-  height: 150px !important;
+  vertical-align: middle;
+  display: table-cell;
+  width: 250px;
 }
