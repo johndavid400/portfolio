@@ -13,8 +13,11 @@
 
   <%= f.text_field :name %>
   <%= f.file_field :attachment %>
+  <% if @project.attachment? %>
+    <%= image_tag @project.attachment.url(:thumb) %>
+  <% end %>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Submit", :class => "button secondary small" %>
   </div>
 <% end %>

@@ -11,6 +11,7 @@ gem 'paperclip'
 gem 'foundation-rails'
 gem 'haml'
 gem 'pry'
+gem "font-awesome-rails"
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
