@@ -7,7 +7,6 @@ gem 'rails', '4.0.3'
 gem 'pg'
 
 gem 'devise'
-gem 'paperclip'
 gem 'foundation-rails'
 gem 'haml'
 gem 'pry'
