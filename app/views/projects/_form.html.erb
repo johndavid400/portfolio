@@ -13,8 +13,13 @@
 
   <%= f.label :name %>
   <%= f.text_field :name %>
+
   <%= f.label :client %>
   <%= f.text_field :client %>
+
+  <%= f.label :category %>
+  <%= f.select :category_id, options_from_collection_for_select(Category.all, :id, :name, :selected => @project.category_id) %>
+
   <%= f.file_field :attachment %>
   <% if @project.attachment? %>
     <%= image_tag @project.attachment.url(:thumb) %>

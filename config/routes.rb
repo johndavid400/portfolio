@@ -1,5 +1,7 @@
 Melissa::Application.routes.draw do
 
+  resources :categories
+
   devise_for :users
   resources :projects
   root "projects#index"
