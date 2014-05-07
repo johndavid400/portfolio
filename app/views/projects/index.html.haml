@@ -1,13 +1,14 @@
-.panel.callout
-  .title
-    %h2 Design Projects
+.projects
+  .panel.callout
+    .title
+      %h2 Design Projects
 
-%ul.small-block-grid-2.medium-block-grid-3.large-block-grid-4
-  - @projects.each do |project|
-    - if project.attachment?
-      %li
-        - if current_user
-          = link_to fa_icon("pencil-square 2x"), edit_project_path(project), :class => "edit"
-        .project
-          = link_to image_tag(project.attachment.url(:thumb)), project.attachment.url(:large), title: "<span class='name'>#{project.name}</span><br><a href='#{project.attachment.url}'>view full size image</a>", :rel => "lightbox[project]"
+  %ul.small-block-grid-2.medium-block-grid-3.large-block-grid-4
+    - @projects.each do |project|
+      - if project.attachment?
+        %li
+          - if current_user
+            = link_to fa_icon("pencil-square 2x"), edit_project_path(project), :class => "edit"
+          .project
+            = link_to image_tag(project.attachment.url(:thumb)), project.attachment.url(:large), title: "<span class='name'>#{project.name}</span><br>Client #{project.client}<br><a href='#{project.attachment.url}'>view full size image</a>", :rel => "lightbox[project]"
 
