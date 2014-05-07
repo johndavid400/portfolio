@@ -4,7 +4,7 @@
       %h2 Design Projects
 
   %ul.small-block-grid-2.medium-block-grid-3.large-block-grid-4
-    - Category.all.each do |category|
+    - Category.order(:name).each do |category|
       .large-12.columns
         %h3= category.name
       - category.projects.each do |project|
