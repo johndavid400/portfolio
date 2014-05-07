@@ -3,4 +3,5 @@ class Project < ActiveRecord::Base
   do_not_validate_attachment_file_type :attachment
   validates_uniqueness_of :name
   belongs_to :category
+  acts_as_list scope: :category
 end

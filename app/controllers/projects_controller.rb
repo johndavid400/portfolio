@@ -35,6 +35,18 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def move_up
+    @project = Project.find(params[:project_id])
+    @project.move_higher
+    redirect_to :back
+  end
+
+  def move_down
+    @project = Project.find(params[:project_id])
+    @project.move_lower
+    redirect_to :back
+  end
+
   # PATCH/PUT /projects/1
   # PATCH/PUT /projects/1.json
   def update

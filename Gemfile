@@ -11,6 +11,7 @@ gem 'foundation-rails'
 gem 'haml'
 gem 'pry'
 gem "font-awesome-rails"
+gem 'acts_as_list'
 
 gem 'paperclip'
 gem 'aws-sdk'
