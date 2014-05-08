@@ -3,7 +3,10 @@ Melissa::Application.routes.draw do
   devise_for :users
 
   get 'home' => 'home#index'
-  resources :categories
+  resources :categories do
+    get 'move_up'
+    get 'move_down'
+  end
   resources :projects do
     get 'move_up'
     get 'move_down'

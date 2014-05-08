@@ -5,6 +5,8 @@
   <thead>
     <tr>
       <th>Name</th>
+      <th>Position</th>
+      <th></th>
       <th></th>
       <th></th>
     </tr>
@@ -14,6 +16,11 @@
     <% @categories.each do |category| %>
       <tr>
         <td><%= category.name %></td>
+        <td><%= category.position %></td>
+        <td width="100px">
+          <%= link_to fa_icon("arrow-circle-up 2x"), category_move_up_path(category) %>
+          <%= link_to fa_icon("arrow-circle-down 2x"), category_move_down_path(category) %>
+        </td>
         <td width="100px"><%= link_to 'Edit', edit_category_path(category) %></td>
         <td width="100px"><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

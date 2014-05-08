@@ -15,6 +15,17 @@
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
+
+  <div class="field">
+    <%- if @category.id %>
+      Position:
+      <%= @category.position %>
+      <br>
+      <%= link_to fa_icon("arrow-circle-up 2x"), category_move_up_path(@category), :class => "left" %>
+      <%= link_to fa_icon("arrow-circle-down 2x"), category_move_down_path(@category), :class => "left" %>
+    <% end %>
+  </div>
+
   <div class="actions">
     <%= f.submit "Submit", :class => "button small success right" %>
     <%= link_to 'Back', categories_path, :class => "button small secondary left"  %>

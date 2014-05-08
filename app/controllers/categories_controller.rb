@@ -5,7 +5,7 @@ class CategoriesController < ApplicationController
   # GET /categories
   # GET /categories.json
   def index
-    @categories = Category.all
+    @categories = Category.order(:position)
   end
 
   # GET /categories/1
@@ -60,6 +60,18 @@ class CategoriesController < ApplicationController
       format.html { redirect_to categories_url }
       format.json { head :no_content }
     end
+  end
+
+  def move_up
+    @category = Category.find(params[:category_id])
+    @category.move_higher
+    redirect_to :back
+  end
+
+  def move_down
+    @category = Category.find(params[:category_id])
+    @category.move_lower
+    redirect_to :back
   end
 
   private
