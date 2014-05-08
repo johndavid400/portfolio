@@ -1,13 +1,16 @@
 Melissa::Application.routes.draw do
 
-  resources :categories
-
   devise_for :users
+
+  get 'home' => 'home#index'
+  resources :categories
   resources :projects do
     get 'move_up'
     get 'move_down'
   end
-  root "projects#index"
+
+  root "home#index"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

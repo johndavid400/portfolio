@@ -26,6 +26,8 @@
   <% end %>
 
   <div class="actions">
-    <%= f.submit "Submit", :class => "button secondary small" %>
+    <%= link_to 'Back', projects_path, :class => "left small button secondary" %>
+    <%= f.submit "Submit", :class => "button success small right" %>
+    <%= link_to 'Delete', project_path(@project), :method => :delete, :data => {confirm: "Delete this project?"}, :class => "button alert small pad-left" if @project.id %>
   </div>
 <% end %>
