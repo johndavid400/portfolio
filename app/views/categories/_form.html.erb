@@ -16,6 +16,8 @@
     <%= f.text_field :name %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Submit", :class => "button small success right" %>
+    <%= link_to 'Back', categories_path, :class => "button small secondary left"  %>
+    <%= link_to 'Delete', category_path(@category), :method => :delete, :data => {confirm: "Delete this category?"}, :class => "button alert small pad-left" if @category.id %>
   </div>
 <% end %>
