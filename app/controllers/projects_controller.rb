@@ -5,7 +5,6 @@ class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.json
   def index
-    @projects = Project.order(:created_at)
   end
 
   def show
